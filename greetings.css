@@ -1,0 +1,66 @@
+body {
+    background: url('cats.png') no-repeat center center/cover;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffcc70, #ff779b);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front h1 {
+    font-size: 24px;
+    color: white;
+}
+
+.card-front p {
+    font-size: 16px;
+    color: white;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: center;
+}
+
+.card-back h2 {
+    color: white;
+    font-size: 22px;
+}
+
+.card-back p {
+    color: white;
+    font-size: 16px;
+}
